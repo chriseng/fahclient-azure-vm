@@ -55,7 +55,8 @@
 				"Standard_NV32as_v4",
                 "Standard_NV6",
                 "Standard_NV12",
-                "Standard_NV24"
+                "Standard_NV24",
+		"Standard_NC6s_v3"
             ],
             "type": "String",
             "metadata": {
