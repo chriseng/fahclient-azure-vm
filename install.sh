@@ -9,6 +9,9 @@ export DEBCONF_NONINTERACTIVE_SEEN=true
 ubuntu-drivers devices
 ubuntu-drivers autoinstall
 
+wget https://developer.download.nvidia.com/compute/cuda/11.0.3/local_installers/cuda_11.0.3_450.51.06_linux.run
+sh cuda_11.0.3_450.51.06_linux.run --silent --driver --override-driver-check
+
 # defaults
 USER="anonymous"
 ADMINUSER="admin"
