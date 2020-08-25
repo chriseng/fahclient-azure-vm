@@ -98,3 +98,4 @@ echo "server {
 
 systemctl restart nginx
 
+reboot
