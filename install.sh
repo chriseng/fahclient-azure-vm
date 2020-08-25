@@ -1,8 +1,7 @@
 #!/bin/bash
 
 apt update
-#apt install -y ubuntu-drivers-common apache2-utils nginx ocl-icd-opencl-dev
-apt install -y apache2-utils nginx
+apt install -y ubuntu-drivers-common apache2-utils nginx ocl-icd-opencl-dev
 
 export DEBIAN_FRONTEND=noninteractive
 export DEBCONF_NONINTERACTIVE_SEEN=true
