@@ -1,16 +1,24 @@
 #!/bin/bash
 
 apt update
-apt install -y ubuntu-drivers-common apache2-utils nginx ocl-icd-opencl-dev
+#apt install -y ubuntu-drivers-common apache2-utils nginx ocl-icd-opencl-dev
+apt install -y apache2-utils nginx
 
 export DEBIAN_FRONTEND=noninteractive
 export DEBCONF_NONINTERACTIVE_SEEN=true
 
-ubuntu-drivers devices
-ubuntu-drivers autoinstall
+#ubuntu-drivers devices
+#ubuntu-drivers autoinstall
 
-wget https://developer.download.nvidia.com/compute/cuda/11.0.3/local_installers/cuda_11.0.3_450.51.06_linux.run
-sh cuda_11.0.3_450.51.06_linux.run --silent --driver --override-driver-check
+#wget https://developer.download.nvidia.com/compute/cuda/11.0.3/local_installers/cuda_11.0.3_450.51.06_linux.run
+#sh cuda_11.0.3_450.51.06_linux.run --silent --driver --override-driver-check
+
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /"
+apt-get update
+apt-get -y install cuda
 
 # defaults
 USER="anonymous"
